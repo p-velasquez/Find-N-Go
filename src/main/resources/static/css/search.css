@@ -1,0 +1,58 @@
+body {
+    background-image: url("../img/wallpaper0.jpg");
+    background-size: 100%;
+}
+
+.bg-findgo {
+    background-color: #353b60;
+}
+
+.hover:hover {
+    filter: brightness(130%);
+}
+
+.img-recinto {}
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: 2%;
+    height: 60px;
+    width: 95%;
+    background-color: #272727;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.search_input::placeholder {
+    color: azure;
+}
+
+.search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color: blue;
+    transition: width 0.4s linear;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
