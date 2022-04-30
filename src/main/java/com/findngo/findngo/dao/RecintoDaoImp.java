@@ -17,7 +17,6 @@ public class RecintoDaoImp implements RecintoDao{
     EntityManager entityManager;
 
     @Override
-    @Transactional
     public List<Recinto> getRecintos() {
         String query = "FROM Recinto";
         return entityManager.createQuery(query).getResultList();
