@@ -7,10 +7,6 @@ body {
     background-color: #353b60;
 }
 
-.hover:hover {
-    filter: brightness(130%);
-}
-
 .img-recinto {}
 
 .searchbar {
