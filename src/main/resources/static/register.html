@@ -36,43 +36,37 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">¡Hola de nuevo!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">¡Bienvenido!</h1>
                                 </div>
                                 <form class="user">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user" id="txtEmail"
-                                               aria-describedby="emailHelp" placeholder="Direccion de Email...">
+                                               aria-describedby="emailHelp" placeholder="Dirección de Email...">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-user mt-xl-3" id="txtRepetirEmail"
+                                               aria-describedby="emailHelp" placeholder="Repetir Email...">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user mt-xl-3"
                                                id="txtPassword" placeholder="Contraseña...">
                                     </div>
                                     <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input mt-3"
-                                                   id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Recuerdame</label>
-                                        </div>
+                                        <input type="password" class="form-control form-control-user mt-xl-3"
+                                               id="txtRepetirPassword" placeholder="Repetir Contraseña...">
                                     </div>
                                     <a onclick="iniciarSesion()"
                                        class="btn btn-success btn-user btn-block mt-3 mb-2 col-sm-12">
-                                        Ingresar
+                                        Registrar
                                     </a>
                                     <hr>
-                                    <a href="index.html" class="btn btn-danger btn-user btn-block col-md-12 mt-2">
-                                        <i class="fab fa-google fa-fw"></i> Ingresar con Google
-                                    </a>
-                                    <a href="index.html"
-                                       class="btn btn-primary btn-user btn-block col-md-12 mt-md-3 mb-2">
-                                        <i class="fab fa-facebook-f fa-fw"></i> Ingresar con Facebook
-                                    </a>
                                 </form>
-                                <hr>
                                 <div class="text-center">
-                                    <a class="small" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
+                                    <a class="small" href="forgot-password.html">¿Ya tienes una cuenta? Ingresa</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">¡Crea una Cuenta!</a>
+                                    <a class="small" href="register.html">¿Quieres que tu recinto sea parte de nosotros?
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +79,7 @@
     </div>
 
 </div>
-<script src="js/login.js"></script>
+<script src="js/register.js"></script>
 
 </body>
 
