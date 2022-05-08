@@ -1,5 +1,6 @@
 package com.findngo.findngo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,10 +30,12 @@ public class Solicitud {
     private LocalDate fecha;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonBackReference
     @Getter @Setter @JoinColumn(name = "ID_USUARIO", nullable = false)
     private Usuario idUsuario;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonBackReference
     @Getter @Setter @JoinColumn(name = "ID_RECINTO", nullable = false)
     private Recinto idRecinto;
 
