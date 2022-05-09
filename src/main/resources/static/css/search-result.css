@@ -1,8 +1,11 @@
 body {
     background-image: url("../img/wallpaper0.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
-
 .bg-findgo {
     background-color: #353b60;
 }
