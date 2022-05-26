@@ -13,7 +13,7 @@ public class RecintoController {
     private RecintoDao recintoDao;
 
     @RequestMapping(value = "api/recintos", method = RequestMethod.GET)
-    public List<Recinto> getRecintos(@RequestHeader(value="Authorization")) {
+    public List<Recinto> getRecintos() {
         return recintoDao.getRecintos();
     }
 
