@@ -20,7 +20,7 @@ async function cargarSolicitudes() {
       listadoHtml += solicitudHtml;
   }
 
-document.querySelector('#solicitudes tbody').outerHTML = listadoHtml;
+  document.querySelector('#solicitudes tbody').outerHTML = listadoHtml;
 
 }
 
