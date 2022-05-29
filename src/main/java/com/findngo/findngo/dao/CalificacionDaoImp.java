@@ -1,7 +1,6 @@
 package com.findngo.findngo.dao;
 
-import com.findngo.findngo.models.Recinto;
-import com.findngo.findngo.models.Solicitud;
+import com.findngo.findngo.models.Calificacion;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,24 +10,15 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class SolicitudDaoImp implements SolicitudDao{
+public class CalificacionDaoImp implements CalificacionDao {
     @PersistenceContext
     EntityManager entityManager;
 
     @Override
     @Transactional
-    public List<Solicitud> getSolicitudes() {
-        String query = "FROM Solicitud";
+    public List<Calificacion> getCalificaciones() {
+        String query = "FROM Calificacion";
         return entityManager.createQuery(query).getResultList();
     }
 
-    @Override
-    public void rechazar(int id) {
-
-    }
-
-    @Override
-    public void aceptar(int id) {
-
-    }
 }
