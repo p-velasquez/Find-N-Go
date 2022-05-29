@@ -39,7 +39,6 @@ public class UsuarioController {
         String hash = argon2.hash(1, 1024, 1, usuario.getContrasena());
         usuario.setContrasena(hash);
         usuario.setTipo(1);
-        usuario.setEstado(1);
 
         usuarioDao.registrar(usuario);
     }

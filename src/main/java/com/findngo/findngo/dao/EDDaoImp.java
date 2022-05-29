@@ -24,10 +24,21 @@ public class EDDaoImp implements EDDao {
 
     @Override
     public List<Espaciodeportivo> getCoincidence(String busqueda) {
-        String query = "FROM Espaciodeportivo WHERE nombre = :correo";
+        String query = "FROM Espaciodeportivo WHERE nombre LIKE :nombre";
         List<Espaciodeportivo> lista = entityManager.createQuery(query)
                 .setParameter("nombre", busqueda)
                 .getResultList();
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public void delete(int id) {
+        Espaciodeportivo ed = entityManager.find(Espaciodeportivo.class, id);
+        entityManager.remove(ed);
+    }
+
+    @Override
+    public void insert(Espaciodeportivo ed) {
+        entityManager.merge(ed);
     }
 }

@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
 
 async function cargarED(id) {
-    const request = await fetch('api/ed/' + id, {
+    const request = await fetch('api/eds/' + id, {
         method: 'GET',
         headers: getHeaders()
     });
