@@ -24,7 +24,7 @@
 <div class="container card o-hidden border-0 shadow-lg my-5 rounded" style="background: #3A4750;">
 <div class="row d-flex justify-content-between">
   <a href="search-result.html" class="btn btn-secondary col-2 m-3 active" role="button" aria-pressed="true">Volver</a>
-  <button type="button" class="btn btn-danger col-2 m-3" data-bs-toggle="modal" data-bs-target="#miModal">Reportar</button>
+  <button type="button" class="btn btn-success col-2 m-3" data-bs-toggle="modal" data-bs-target="#miModal">Calificar</button>
 </div>
 <div class="row m-3">
   <div class="col-12 col-sm-6 col-md-12 col-lg-6 background: #868e96;">
@@ -88,20 +88,26 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> Reporte </h5>
+          <h5 class="modal-title" id="exampleModalLabel"> Calificacion </h5>
           </button>
         </div>
         <div class="modal-body">
           <form action="">
             <div class="form-floating">
-              <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-              <label for="floatingTextarea2">Denos una descripcion de lo que ocurrio</label>
+              <select class="form-control-lg p-2">
+                <option selected value="0">Nota</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Enviar Reporte</button>
+          <button type="button" class="btn btn-primary">Calificar</button>
         </div>
       </div>
     </div>

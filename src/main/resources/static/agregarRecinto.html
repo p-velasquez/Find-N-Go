@@ -30,11 +30,17 @@
   </div>
   <div class="row d-flex justify-content-between mt-3">
     <div class="col text-center">
-      <select class="form-control-lg p-2 bg-dark text-light">
-        <option>Valor por Bloque</option>
-        <option>...</option>
-        <option>..</option>
-      </select>
+      <div class="bg-dark rounded h-100">
+        <input class="form-control form-control-lg bg-dark text-light" id='tiempoBloque' type="number" placeholder="Tiempo por bloque (min)">
+      </div>
+    </div>
+    <div class="col text-center">
+      <div class="bg-dark rounded h-100">
+        <input class="form-control form-control-lg bg-dark text-light" id='valorBloque' type="number" placeholder="Valor Bloque">
+      </div>
+    </div>
+    <div class="col text-center">
+      <input class="form-control form-control-lg bg-dark text-light" id='cantidadCancha' type="number" placeholder="Cantidad Cancha">
     </div>
     <div class="col text-center">
       <select class="form-control-lg p-2 bg-dark text-light">
@@ -61,75 +67,6 @@
         <textarea class="form-control bg-dark text-light" id="descripcionRecinto" rows="7" style="resize: none; overflow-y: scroll"></textarea>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12 text-center mt-3">
-      <input type="checkbox" class="btn-check" name="options" id="option1">
-      <label class="btn btn-secondary rounded-circle" for="option1">L</label>
-      <input type="checkbox" class="btn-check" name="option1" id="option2">
-      <label class="btn btn-secondary rounded-circle" for="option2">M</label>
-      <input type="checkbox" class="btn-check" name="option2" id="option3">
-      <label class="btn btn-secondary rounded-circle" for="option3">M</label>
-      <input type="checkbox" class="btn-check" name="option3" id="option4">
-      <label class="btn btn-secondary rounded-circle" for="option4">J</label>
-      <input type="checkbox" class="btn-check" name="option4" id="option5">
-      <label class="btn btn-secondary rounded-circle" for="option5">V</label>
-      <input type="checkbox" class="btn-check" name="option5" id="option6">
-      <label class="btn btn-secondary rounded-circle" for="option6">S</label>
-      <input type="checkbox" class="btn-check" name="option6" id="option7">
-      <label class="btn btn-secondary rounded-circle" for="option7">D</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-3 text-center mt-3">
-      <select class="form-control-lg p-2 bg-dark text-light">
-        <option>Apertura</option>
-        <option>10:30</option>
-        <option>8:30</option>
-      </select>
-    </div>
-    <div class="col-3 text-center mt-3">
-      <select class="form-control-lg p-2 bg-dark text-light">
-        <option>Cierre</option>
-        <option>18:30</option>
-        <option>19:30</option>
-      </select>
-    </div>
-    <div class="col-6 text-center mt-3 ">
-      <button type="button" class="btn btn-success btn-lg">Agregar</button>
-    </div>
-  </div>
-  <div class="row m-3">
-    <table class="table table-dark">
-      <thead>
-      <tr>
-        <th scope="col">Apertura</th>
-        <th scope="col">Cierre</th>
-        <th scope="col">Dias</th>
-        <th scope="col">Accion</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th scope="row">12:30</th>
-        <td>18:30</td>
-        <td>Otto</td>
-        <td>   <button type="button" class="btn btn-danger rounded-circle"> X </button> </td>
-      </tr>
-      <tr>
-        <th scope="row">13:30</th>
-        <td>18:30</td>
-        <td>L,M,V</td>
-        <td>   <button type="button" class="btn btn-danger rounded-circle"> X </button> </td>
-      </tr>
-      <tr>
-        <th scope="row">14:40</th>
-        <td>18:30</td>
-        <td>L,J,V,S</td>
-        <td>   <button type="button" class="btn btn-danger rounded-circle"> X </button> </td>
-      </tr>
-      </tbody>
-    </table>
   </div>
   <div class="row m-3">
     <div class="d-flex flex-row-reverse bd-highlight">
