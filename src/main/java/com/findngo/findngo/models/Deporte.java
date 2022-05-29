@@ -3,9 +3,10 @@ package com.findngo.findngo.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "deporte")
@@ -17,6 +18,4 @@ public class Deporte {
     @Getter @Setter @Column(name = "NOMBRE", nullable = false)
     private String nombre;
 
-    @Getter @Setter @OneToMany(mappedBy = "idDeporte")
-    private Set<Espaciodeporte> espaciodeportes = new LinkedHashSet<>();
 }

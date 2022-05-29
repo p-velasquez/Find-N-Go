@@ -4,11 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Entity
-@Table(name = "direccion")
+@Table(name = "direccion", indexes = {
+        @Index(name = "ID_COMUNA", columnList = "ID_COMUNA")
+})
 public class Direccion {
     @Id
     @Getter @Setter @Column(name = "ID_DIRECCION", nullable = false)
@@ -23,9 +23,5 @@ public class Direccion {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @Getter @Setter @JoinColumn(name = "ID_COMUNA", nullable = false)
     private Comuna idComuna;
-
-    @OneToMany(mappedBy = "idDireccion")
-    @Getter @Setter
-    private Set<Recinto> recintos = new LinkedHashSet<>();
 
 }
