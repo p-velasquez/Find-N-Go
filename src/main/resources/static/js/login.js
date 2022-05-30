@@ -2,6 +2,17 @@ $(document).ready(function() {
    // on ready
 });
 
+function validarDatos() {
+let valido = true;
+    if(document.getElementById("txtEmail").value == ""){
+        valido = false;
+        document.getElementById("error").style.display = "";
+    }
+
+    if(valido){
+        iniciarSesion();
+    }
+}
 
 async function iniciarSesion() {
   let datos = {};

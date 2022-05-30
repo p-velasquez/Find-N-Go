@@ -1,8 +1,5 @@
 package com.findngo.findngo.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,14 +8,39 @@ import javax.persistence.*;
 })
 public class Dia {
     @Id
-    @Getter @Setter @Column(name = "ID_DIA", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_DIA", nullable = false)
     private Integer id;
 
-    @Getter @Setter @Column(name = "NOMBRE", nullable = false, length = 250)
+    @Column(name = "NOMBRE", nullable = false, length = 250)
     private String nombre;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @Getter @Setter @JoinColumn(name = "ID_HORARIO", nullable = false)
+    @JoinColumn(name = "ID_HORARIO", nullable = false)
     private Horario idHorario;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Horario getIdHorario() {
+        return idHorario;
+    }
+
+    public void setIdHorario(Horario idHorario) {
+        this.idHorario = idHorario;
+    }
 
 }

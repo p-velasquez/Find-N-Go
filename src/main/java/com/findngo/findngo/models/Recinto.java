@@ -1,8 +1,5 @@
 package com.findngo.findngo.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,14 +8,39 @@ import javax.persistence.*;
 })
 public class Recinto {
     @Id
-    @Getter @Setter @Column(name = "ID_RECINTO", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_RECINTO", nullable = false)
     private Integer id;
 
-    @Getter @Setter @Column(name = "NOMBRE", nullable = false)
+    @Column(name = "NOMBRE", nullable = false)
     private String nombre;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @Getter @Setter @JoinColumn(name = "ID_DIRECCION", nullable = false)
+    @JoinColumn(name = "ID_DIRECCION", nullable = false)
     private Direccion idDireccion;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Direccion getIdDireccion() {
+        return idDireccion;
+    }
+
+    public void setIdDireccion(Direccion idDireccion) {
+        this.idDireccion = idDireccion;
+    }
 
 }

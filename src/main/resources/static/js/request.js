@@ -9,32 +9,31 @@ async function cargarEds() {
     method: 'GET',
     headers: getHeaders()
   });
-  const ed = await request.json();
+  const eds = await request.json();
 
   let listadoHtml = '';
   for (let ed of eds) {
-      let botonDetalle = '<a href="#" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-pen"></i></a>';
-      let botonAceptar = '<a href="#" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-pen"></i></a>';
+      let botonEditar = '<a href="#" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-pen"></i></a>';
+      let botonHorario = '<a href="#" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-calendar"></i></a>';
       let botonEliminar = '<a href="#" onclick="eliminarEd(' + ed.id + ')" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>';
-      let solicitudHtml = '<tr><td>'+solicitud.fecha+'</td><td>' + solicitud.tipo + '</td><td>' + solicitud.id + '</td><td>' + botonDetalle + botonAceptar + botonRechazar + '</td></tr>';
-      listadoHtml += solicitudHtml;
+      let edHtml = '<tr><td>'+ed.idDeporte.nombre+'</td><td>' + botonEditar + botonHorario + botonEliminar + '</td></tr>';
+      listadoHtml += edHtml;
   }
 
-  document.querySelector('#solicitudes tbody').outerHTML = listadoHtml;
+  document.querySelector('#eds tbody').outerHTML = listadoHtml;
 
 }
 
 function getHeaders() {
     return {
      'Accept': 'application/json',
-     'Content-Type': 'application/json',
-     'Authorization': localStorage.token
+     'Content-Type': 'application/json'
    };
 }
 
 async function eliminarEd(id) {
 
-  if (!confirm('¿Desea rechazar esta solicitud?')) {
+  if (!confirm('¿Desea eliminar este espacio deportivo?')) {
     return;
   }
 

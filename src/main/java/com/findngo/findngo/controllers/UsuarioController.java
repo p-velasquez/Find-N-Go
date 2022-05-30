@@ -21,8 +21,7 @@ public class UsuarioController {
     private JWTUtil jwtUtil;
 
     @RequestMapping(value = "api/usuarios", method = RequestMethod.GET)
-    public List<Usuario> getUsuarios(@RequestHeader(value="Authorization") String token) {
-        if (!validarToken(token)) { return null; }
+    public List<Usuario> getUsuarios() {
 
         return usuarioDao.getUsuarios();
     }

@@ -6,7 +6,6 @@ async function agregarED() {
 
     const ed = await request.json();
 }
-
 function getHeaders() {
     return {
         'Accept': 'application/json',

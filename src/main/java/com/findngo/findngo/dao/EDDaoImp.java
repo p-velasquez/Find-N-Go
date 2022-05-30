@@ -15,6 +15,10 @@ public class EDDaoImp implements EDDao {
     @PersistenceContext
     EntityManager entityManager;
 
+    /**
+     * Obtiene todos los recintos deportivos ejecutando una query de sql
+     * @return ResultList transformado a Lista de tipo EspacioDeportivo
+     */
     @Override
     @Transactional
     public List<Espaciodeportivo> getEds() {
@@ -22,21 +26,34 @@ public class EDDaoImp implements EDDao {
         return entityManager.createQuery(query).getResultList();
     }
 
+    /**
+     *
+     * @param id recibe el id tipo int
+     * @return
+     */
     @Override
-    public List<Espaciodeportivo> getCoincidence(String busqueda) {
-        String query = "FROM Espaciodeportivo WHERE nombre LIKE :nombre";
-        List<Espaciodeportivo> lista = entityManager.createQuery(query)
-                .setParameter("nombre", busqueda)
+    public List<Espaciodeportivo> getEdById(int id) {
+        String query = "FROM Espaciodeportivo WHERE id_ed = :id";
+        List<Espaciodeportivo> ed = entityManager.createQuery(query)
+                .setParameter("id", id)
                 .getResultList();
         return entityManager.createQuery(query).getResultList();
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void delete(int id) {
         Espaciodeportivo ed = entityManager.find(Espaciodeportivo.class, id);
         entityManager.remove(ed);
     }
 
+    /**
+     *
+     * @param ed
+     */
     @Override
     public void insert(Espaciodeportivo ed) {
         entityManager.merge(ed);

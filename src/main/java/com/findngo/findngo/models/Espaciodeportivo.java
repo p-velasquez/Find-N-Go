@@ -1,8 +1,5 @@
 package com.findngo.findngo.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,34 +10,107 @@ import javax.persistence.*;
 })
 public class Espaciodeportivo {
     @Id
-    @Getter @Setter @Column(name = "ID_ED", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_ED", nullable = false)
     private Integer id;
 
-    @Getter @Setter @Column(name = "VALOR", nullable = false)
+    @Column(name = "VALOR", nullable = false)
     private Integer valor;
 
-    @Getter @Setter @Column(name = "CANTIDAD", nullable = false)
+    @Column(name = "CANTIDAD", nullable = false)
     private Integer cantidad;
 
-    @Getter @Setter @Column(name = "FOTO")
+    @Column(name = "FOTO")
     private byte[] foto;
 
-    @Getter @Setter @Column(name = "DESCRIPCION", nullable = false, length = 250)
+    @Column(name = "DESCRIPCION", nullable = false, length = 250)
     private String descripcion;
 
-    @Getter @Setter @Column(name = "TIEMPO_BLOQUE", nullable = false)
+    @Column(name = "TIEMPO_BLOQUE", nullable = false)
     private Integer tiempoBloque;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @Getter @Setter @JoinColumn(name = "ID_USUARIO", nullable = false)
+    @JoinColumn(name = "ID_USUARIO", nullable = false)
     private Usuario idUsuario;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @Getter @Setter @JoinColumn(name = "ID_RECINTO", nullable = false)
+    @JoinColumn(name = "ID_RECINTO", nullable = false)
     private Recinto idRecinto;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @Getter @Setter @JoinColumn(name = "ID_DEPORTE", nullable = false)
+    @JoinColumn(name = "ID_DEPORTE", nullable = false)
     private Deporte idDeporte;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getValor() {
+        return valor;
+    }
+
+    public void setValor(Integer valor) {
+        this.valor = valor;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Integer getTiempoBloque() {
+        return tiempoBloque;
+    }
+
+    public void setTiempoBloque(Integer tiempoBloque) {
+        this.tiempoBloque = tiempoBloque;
+    }
+
+    public Usuario getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Usuario idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public Recinto getIdRecinto() {
+        return idRecinto;
+    }
+
+    public void setIdRecinto(Recinto idRecinto) {
+        this.idRecinto = idRecinto;
+    }
+
+    public Deporte getIdDeporte() {
+        return idDeporte;
+    }
+
+    public void setIdDeporte(Deporte idDeporte) {
+        this.idDeporte = idDeporte;
+    }
 
 }

@@ -43,6 +43,7 @@
                                             <input type="email" class="form-control form-control-user" id="txtEmail"
                                                 aria-describedby="emailHelp" placeholder="Dirección de Email...">
                                         </div>
+                                        <span id="error" style="display: none;">Error de email</span>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user mt-xl-3"
                                                 id="txtPassword" placeholder="Contraseña...">
@@ -54,7 +55,7 @@
                                                 <label class="custom-control-label" for="customCheck">Recuerdame</label>
                                             </div>
                                         </div>
-                                        <a onclick="iniciarSesion()"
+                                        <a onclick="validarDatos()"
                                             class="btn btn-success btn-user btn-block mt-3 mb-2 col-sm-12">
                                             Ingresar
                                         </a>

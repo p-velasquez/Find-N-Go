@@ -1,8 +1,5 @@
 package com.findngo.findngo.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,19 +9,51 @@ import javax.persistence.*;
 })
 public class Calificacion {
     @Id
-    @Getter @Setter @Column(name = "ID_CALIFICACION", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_CALIFICACION", nullable = false)
     private Integer id;
 
-    @Getter @Setter @Column(name = "NOTA", nullable = false)
+    @Column(name = "NOTA", nullable = false)
     private Integer nota;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @Getter @Setter @JoinColumn(name = "ID_USUARIO", nullable = false)
+    @JoinColumn(name = "ID_USUARIO", nullable = false)
     private Usuario idUsuario;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @Getter @Setter @JoinColumn(name = "ID_ED", nullable = false)
+    @JoinColumn(name = "ID_ED", nullable = false)
     private Espaciodeportivo idEd;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getNota() {
+        return nota;
+    }
+
+    public void setNota(Integer nota) {
+        this.nota = nota;
+    }
+
+    public Usuario getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Usuario idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public Espaciodeportivo getIdEd() {
+        return idEd;
+    }
+
+    public void setIdEd(Espaciodeportivo idEd) {
+        this.idEd = idEd;
+    }
 
 }

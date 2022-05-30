@@ -13,7 +13,7 @@ async function cargarED(id) {
 
     //Se agrega la informacion del ed clickeado
 
-    let edHTML = '';
+    let listadoHtml = '';
 
     document.querySelector('#ed').outerHTML = edHTML;
 }

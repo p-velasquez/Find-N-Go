@@ -1,21 +1,32 @@
 package com.findngo.findngo.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "ciudad")
 public class Ciudad {
     @Id
-    @Getter @Setter @Column(name = "ID_CIUDAD", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_CIUDAD", nullable = false)
     private Integer id;
 
-    @Getter @Setter @Column(name = "NOMBRE", nullable = false)
+    @Column(name = "NOMBRE", nullable = false)
     private String nombre;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
 }
