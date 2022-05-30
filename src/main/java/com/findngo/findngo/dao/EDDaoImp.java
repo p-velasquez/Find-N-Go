@@ -8,6 +8,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+/**
+ * Esta clase es una implementacion de la clase Dao, la cual se encarga
+ * de traer resultados desde la base de datos, en este caso de espacios deportivos.
+ */
+
 @Repository
 @Transactional
 public class EDDaoImp implements EDDao {
@@ -21,6 +26,7 @@ public class EDDaoImp implements EDDao {
      */
     @Override
     @Transactional
+
     public List<Espaciodeportivo> getEds() {
         String query = "FROM Espaciodeportivo";
         return entityManager.createQuery(query).getResultList();
@@ -29,7 +35,7 @@ public class EDDaoImp implements EDDao {
     /**
      *
      * @param id recibe el id tipo int
-     * @return
+     * @return : retorna una lista de tipo resultlist de espacios deportivos.
      */
     @Override
     public List<Espaciodeportivo> getEdById(int id) {
@@ -42,7 +48,7 @@ public class EDDaoImp implements EDDao {
 
     /**
      *
-     * @param id
+     * @param id: corresponde al id del espacio deportivo a eliminar.
      */
     @Override
     public void delete(int id) {
@@ -52,7 +58,7 @@ public class EDDaoImp implements EDDao {
 
     /**
      *
-     * @param ed
+     * @param ed: corresponde al objeto de espacio deportivo.
      */
     @Override
     public void insert(Espaciodeportivo ed) {
