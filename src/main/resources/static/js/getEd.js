@@ -1,21 +1,27 @@
 $(document).ready(function() {
-    cargarED();
+    var value = localStorage.getItem("searchResult");
+    cargarED(value);
     $('#ed');
 });
 
-async function cargarED(id) {
-    const request = await fetch('api/eds/' + id, {
-        method: 'GET',
-        headers: getHeaders()
-    });
+async function buscar(id) {
 
-    const ed = await request.json();
+ const request = await fetch('api/eds/search?query=' + id, {
+    method: 'GET',
+    headers: getHeaders()
+  });
 
-    //Se agrega la informacion del ed clickeado
+  const eds = await request.json();
+      let listadoHtml = '';
 
-    let listadoHtml = '';
+      //Se agrega loop para recorrer todos los espacios deportivos e insertar cada vez un div con en el html.
+      for (let ed of eds){
 
-    document.querySelector('#ed').outerHTML = edHTML;
+          let edHtml = 'aca los ed.info';
+              listadoHtml += edHtml;
+      }
+
+      document.querySelector('#ed').outerHTML = listadoHtml;
 }
 
 function getHeaders() {

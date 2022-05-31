@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log(localStorage.getItem("deporte"));
   comunas();
   deportes();
   $('#ed');
@@ -35,7 +34,7 @@ async function buscar(nombre) {
   });
 
   const eds = await request.json();
-  var filtrados = eds.filter(x=> x.idDeporte.id == deporte);
+  var filtrados = eds.filter(x => x.idDeporte.id == deporte);
   if(deporte == '-1' || deporte == ''){
     filtrados = eds;
   }
@@ -46,7 +45,7 @@ async function buscar(nombre) {
 
           let edHtml =
           '<div class="p-4 col-12 col-sm-12 col-md-6">' +
-                      '<div class="card border-0">' +
+                      '<div onclick="cargarRecinto('+ ed.id +');" style="cursor: pointer;" class="card border-0">' +
                       '<div class="row g-0">' +
                       '<div class="col-sm-6" style="background: #868e96;">' +
                       '<img src="img/recintox.jpeg" class="card-img-top h-100">' +
@@ -102,4 +101,9 @@ async function deportes() {
       }
 
       document.querySelector('#deportes').outerHTML = listadoHtml;
+}
+
+function cargarRecinto(id){
+    localStorage.setItem("searchRecinto", id);
+    window.location.href = 'ed.html'
 }
