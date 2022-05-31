@@ -2,7 +2,6 @@ package com.findngo.findngo.controllers;
 
 import com.findngo.findngo.dao.EDDao;
 import com.findngo.findngo.models.Espaciodeportivo;
-import com.findngo.findngo.models.Usuario;
 import com.findngo.findngo.service.EDService;
 import com.findngo.findngo.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +47,17 @@ public class EDController {
     }
 
     /**
+     * Esta metodo crea una api del tipo search, la cual se encargara mediante una consulta query
+     * traer la informacion relacionada con el espacio deportivo.
+     * @param query : parametro utilizado para realizar la busqueda del espacio deportivo
+     * @return retorna el resultado de la busqueda.
+     */
+    @GetMapping("/id")
+    public ResponseEntity<List<Espaciodeportivo>> buscarId(@RequestParam("query") String query){
+        return ResponseEntity.ok(edService.buscarId(query));
+    }
+
+    /**
      * Esta metodo crea un espacio deportivo, la cual se encargara mediante un objeto espacio deportivo
      * de crear un nuevo espacio.
      * @param ed : objeto de tipo espacio deportivo.
@@ -62,35 +72,17 @@ public class EDController {
      * Este metodo crea una api, la que entregara como resultado todos los espacios deportivos..
      * @return retorna una lista de los espacios deportivos que luego seran utilizados en el html.
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Espaciodeportivo> getEds() {
         return edDao.getEds();
     }
 
-/*    @RequestMapping(value = "api/eds/nombre", method = RequestMethod.GET)
-    public List<Espaciodeportivo> getCoincidence(@PathVariable String busqueda) {
-        return edDao.getCoincidence(busqueda);
-    }*/
-
-    /**
-     * Este metodo crea una api para consultar mediante la ID un espacio deportivo,
-     * @param id: es el id del espacio deportivo.
-     * @return retorna una lista de espacios deportivos.
-     */
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public List<Espaciodeportivo> getEdById(@PathVariable int id) {
-        return edDao.getEdById(id);
-    }
-
     /**
      * Este metodo crea una api de tipo espacios deportivos que se encargara de eliminarlo mediante su id,
-     * @param token: trae un token de sesion de usuario
      * @param id: trae el id del espacio deportivo
      */
-    @RequestMapping(value = "api/eds/{id}", method = RequestMethod.DELETE)
-    public void delete(@RequestHeader(value="Authorization") String token,
-                         @PathVariable int id) {
-        if (!validarToken(token)) { return; }
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable int id) {
         edDao.delete(id);
     }
 
@@ -99,7 +91,7 @@ public class EDController {
      * este insert corresponde al espacio deportivo el cual sera cargado.
      * @param espaciodeportivo : objeto de tipo espacio deportivo.
      */
-    @RequestMapping(value = "api/eds", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public void insert(@RequestBody Espaciodeportivo espaciodeportivo) {
         edDao.insert(espaciodeportivo);
     }

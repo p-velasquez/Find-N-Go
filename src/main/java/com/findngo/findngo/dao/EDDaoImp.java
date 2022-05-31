@@ -26,23 +26,8 @@ public class EDDaoImp implements EDDao {
      */
     @Override
     @Transactional
-
     public List<Espaciodeportivo> getEds() {
         String query = "FROM Espaciodeportivo";
-        return entityManager.createQuery(query).getResultList();
-    }
-
-    /**
-     *
-     * @param id recibe el id tipo int
-     * @return : retorna una lista de tipo resultlist de espacios deportivos.
-     */
-    @Override
-    public List<Espaciodeportivo> getEdById(int id) {
-        String query = "FROM Espaciodeportivo WHERE id_ed = :id";
-        List<Espaciodeportivo> ed = entityManager.createQuery(query)
-                .setParameter("id", id)
-                .getResultList();
         return entityManager.createQuery(query).getResultList();
     }
 

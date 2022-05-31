@@ -1,27 +1,24 @@
 $(document).ready(function() {
-    var value = localStorage.getItem("searchResult");
-    cargarED(value);
+    var value = localStorage.getItem("searchRecinto");
+    buscar(value);
+    console.log(value);
     $('#ed');
 });
 
 async function buscar(id) {
 
- const request = await fetch('api/eds/search?query=' + id, {
+ const request = await fetch('api/eds/id?query=' + id, {
     method: 'GET',
     headers: getHeaders()
   });
 
   const eds = await request.json();
-      let listadoHtml = '';
 
-      //Se agrega loop para recorrer todos los espacios deportivos e insertar cada vez un div con en el html.
       for (let ed of eds){
-
-          let edHtml = 'aca los ed.info';
-              listadoHtml += edHtml;
+          document.getElementById('title').innerHTML = ed.idRecinto.nombre;
+          document.getElementById('description').innerHTML = ed.descripcion;
       }
 
-      document.querySelector('#ed').outerHTML = listadoHtml;
 }
 
 function getHeaders() {

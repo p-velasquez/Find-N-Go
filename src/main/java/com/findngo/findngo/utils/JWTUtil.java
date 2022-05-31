@@ -34,9 +34,9 @@ public class JWTUtil {
     /**
      * Create a new token.
      *
-     * @param id
-     * @param subject
-     * @return
+     * @param id id
+     * @param subject subject
+     * @return builder
      */
     public String create(String id, String subject) {
 
@@ -67,8 +67,8 @@ public class JWTUtil {
     /**
      * Method to validate and read the JWT
      *
-     * @param jwt
-     * @return
+     * @param jwt string del token
+     * @return subject
      */
     public String getValue(String jwt) {
         // This line will throw an exception if it is not a signed JWS (as
@@ -82,8 +82,8 @@ public class JWTUtil {
     /**
      * Method to validate and read the JWT
      *
-     * @param jwt
-     * @return
+     * @param jwt string del token
+     * @return id
      */
     public String getKey(String jwt) {
         // This line will throw an exception if it is not a signed JWS (as

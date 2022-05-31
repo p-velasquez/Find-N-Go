@@ -17,15 +17,6 @@ public interface EDDao {
     List<Espaciodeportivo> getEds();
 
     /**
-     * Obtiene todos los espacios deportivos pero segun el ID
-     * @param id : Corresponde al id del espacio deportivo.
-     * @return : retorna una lista de espacios deportivos segun su id.
-     */
-    List<Espaciodeportivo> getEdById(int id);
-//    List<Espaciodeportivo> getCoincidence(String busqueda);
-
-
-    /**
      * Borra el espacio deportivo segun el ID.
      * @param id : Corresponde al id del espacio deportivo.
      */
