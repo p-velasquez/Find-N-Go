@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Esta clase se encarga de crear un controlador el cual tendra incidencia en la comunicion del front con el back,
+ * crea apis, en este caso en particular una api del tipo deportes la cual sera consultada por el usuario.
+ */
 @RestController
 public class DeporteController {
 
@@ -19,6 +23,10 @@ public class DeporteController {
     @Autowired
     private JWTUtil jwtUtil;
 
+    /**
+     * Este metodo crea una api de tipo deportes, la entregara como resultado toda los deportes.
+     * @return retorna una lista de deportes que luego seran utilizadas en los selects.
+     */
     @RequestMapping(value = "api/deportes", method = RequestMethod.GET)
     public List<Deporte> getDeportes() {
         return deporteDao.getDeportes();
