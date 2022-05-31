@@ -13,8 +13,8 @@ async function cargarEds() {
 
   let listadoHtml = '';
   for (let ed of eds) {
-      let botonEditar = '<a href="#" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-pen"></i></a>';
-      let botonHorario = '<a href="#" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-calendar"></i></a>';
+      let botonEditar = '<a href="addEd.html" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-pen"></i></a>';
+      let botonHorario = '<a href=addEdSchedule.html" onclick="" class="btn btn-info btn-circle btn-sm ml-1"><i class="fas fa-calendar"></i></a>';
       let botonEliminar = '<a href="#" onclick="eliminarEd(' + ed.id + ')" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>';
       let edHtml = '<tr><td>'+ed.idDeporte.nombre+'</td><td>' + botonEditar + botonHorario + botonEliminar + '</td></tr>';
       listadoHtml += edHtml;

@@ -1,0 +1,9 @@
+body {
+    background-image: url("../img/patron-fisuras-tema-deporte_103032-15.png");
+}
+
+.logo {
+    background-image: url("../img/logo.png");
+    background-position: center;
+    min-height: 600px;
+}

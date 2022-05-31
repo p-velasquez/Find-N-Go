@@ -5,4 +5,5 @@ body {
 .logo {
   background-image: url("../img/logo.png");
   background-position: center;
+  min-height: 600px;
 }

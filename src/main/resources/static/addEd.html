@@ -20,7 +20,8 @@
 <div class="container card o-hidden border-0 shadow-lg my-5 rounded" style="background: #3A4750;">
   <div class="row">
     <div class="col-2">
-      <button type="button" class="btn btn-secondary m-3">Volver</button>
+      <a href="edGestion.html" class="btn btn-secondary m-3 active" role="button"
+         aria-pressed="true">Volver</a>
     </div>
   </div>
   <div class="row">
@@ -70,11 +71,18 @@
   </div>
   <div class="row m-3">
     <div class="d-flex flex-row-reverse bd-highlight">
-      <button type="button" class="btn btn-primary p-2 bd-highlight">Actualizar</button>
+      <button onClick="validarED();" type="button" class="btn btn-primary p-2 bd-highlight">Actualizar</button>
     </div>
   </div>
+<div class="alert alert-danger" role="alert" id="panelrojo" style="display: none;">
+  <i id="error"></i>
+</div>
+<div class="alert alert-success" role="alert" id="panelverde" style="display: none;">
+  <i id="exito"></i>
+</div>
 </div>
 
+<script src="js/addEd.js"></script>
 </body>
 
 </html>

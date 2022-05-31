@@ -1,18 +1,45 @@
-$(document).ready(function() {
-   // on ready
-});
-
-function validarDatos() {
-let valido = true;
-    if(document.getElementById("txtEmail").value == ""){
-        valido = false;
-        document.getElementById("error").style.display = "";
+function validar() {
+    const correo = document.getElementById("txtEmail")
+    const pass = document.getElementById("txtPassword")
+    const elementoError = document.getElementById("error")
+    const elementoExito = document.getElementById("exito")
+  let valido = true;
+  let mensaje = ""
+  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+  let regexPassword = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+  if (correo.value == "") {
+    mensaje += `El correo no puede ser vacio <br>`
+    valido = false;
+  }
+  else{
+    if(!regexEmail.test(correo.value)){
+      mensaje += `El formato del correo no es valido <br>`
+      valido = false;
     }
-
-    if(valido){
-        iniciarSesion();
+  }
+  if (pass.value == "") {
+    mensaje += `La contraseña no puede ser vacia <br>`
+    valido = false;
+  }
+  else {
+    if (!regexPassword.test(pass.value)) {
+      mensaje += `El formato de la contraseña no es valida <br>`
+      valido = false;
     }
+  }
+  if (valido) {
+    document.getElementById("panelverde").style.display = "";
+    document.getElementById("panelrojo").style.display = "none";
+    document.getElementById("exito").textContent = "Iniciando sesión...";
+    iniciarSesion();
+  }
+  else {
+    document.getElementById("panelrojo").style.display = "";
+    document.getElementById("panelverde").style.display = "none";
+    elementoError.innerHTML = mensaje
+  }
 }
+
 
 async function iniciarSesion() {
   let datos = {};
