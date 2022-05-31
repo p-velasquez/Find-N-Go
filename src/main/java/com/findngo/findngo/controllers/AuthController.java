@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Esta clase es un controlador de tipo Auth.
+ * Que se encarga de autentificar la sesion del usuario.
+ */
 @RestController
 public class AuthController {
 
@@ -17,6 +21,13 @@ public class AuthController {
 
     @Autowired
     private JWTUtil jwtUtil;
+
+
+    /**
+     * Obtiene todos el usuario logueado,
+     * @return ResultList transformado a Lista de tipo EspacioDeportivo
+     * @param usuario : objeto de tipo usuario.
+     */
 
     @RequestMapping(value = "api/login", method = RequestMethod.POST)
     public String login(@RequestBody Usuario usuario) {
